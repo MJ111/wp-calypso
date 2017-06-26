@@ -29,7 +29,7 @@ const ciraAgreementUrl = 'https://services.cira.ca/agree/agreement/agreementVers
 const defaultValues = {
 	lang: 'EN',
 	legalType: 'CCT',
-	ciraAgreementAccepted: false,
+	ciraAgreementAccepted: true,
 };
 
 class RegistrantExtraInfoCaForm extends React.PureComponent {
