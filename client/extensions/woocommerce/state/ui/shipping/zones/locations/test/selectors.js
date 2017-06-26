@@ -1799,19 +1799,12 @@ describe( 'selectors', () => {
 
 			expect( getCurrentlyEditingShippingZoneCountries( state ) ).to.deep.equal( [
 				{
-					code: 'EU',
-					name: 'Europe',
-					type: 'continent',
-					selected: true,
-					disabled: false,
-					ownerZoneId: undefined,
-				},
-				{
 					code: 'FR',
 					name: 'France',
 					type: 'country',
 					selected: true,
 					disabled: true,
+					continentSelected: true,
 					ownerZoneId: 7,
 				},
 				{
@@ -1820,6 +1813,7 @@ describe( 'selectors', () => {
 					type: 'country',
 					selected: true,
 					disabled: false,
+					continentSelected: true,
 					ownerZoneId: undefined,
 				},
 				{
@@ -1828,15 +1822,18 @@ describe( 'selectors', () => {
 					type: 'country',
 					selected: true,
 					disabled: false,
+					continentSelected: true,
 					ownerZoneId: undefined,
 				},
 				{
-					code: 'NA',
-					name: 'North America',
+					code: 'EU',
+					name: 'Europe',
 					type: 'continent',
-					selected: false,
-					disabled: true,
-					ownerZoneId: 8,
+					selected: true,
+					disabled: false,
+					ownerZoneId: undefined,
+					countryCount: 3,
+					selectedCountryCount: 3,
 				},
 				{
 					code: 'CA',
@@ -1844,6 +1841,7 @@ describe( 'selectors', () => {
 					type: 'country',
 					selected: false,
 					disabled: false,
+					continentSelected: false,
 					ownerZoneId: undefined,
 				},
 				{
@@ -1852,7 +1850,18 @@ describe( 'selectors', () => {
 					type: 'country',
 					selected: false,
 					disabled: true,
+					continentSelected: false,
 					ownerZoneId: 7,
+				},
+				{
+					code: 'NA',
+					name: 'North America',
+					type: 'continent',
+					selected: false,
+					disabled: true,
+					ownerZoneId: 8,
+					countryCount: 2,
+					selectedCountryCount: 0,
 				},
 			] );
 		} );
